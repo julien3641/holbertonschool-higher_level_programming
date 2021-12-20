@@ -14,14 +14,13 @@ int check_cycle(listint_t *list)
 
 	listint_t *node2;
 
-	/*if (list == NULL || list->next == NULL)
-	  return (0);*/
-	/*list = list->next;*/
+	if (list == NULL || list->next == NULL)
+	  return (0);
 	node2 = list->next->next;
 	list = list->next;
 	if (list == node2)
 		return (1);
-	while (list != NULL && list != NULL && node2 != NULL)
+	while (list != NULL && list->next != NULL && node2 != NULL)
 	{
 		list = list->next;
 		node2 = node2->next->next;
