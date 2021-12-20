@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 
 	listint_t *node1, *node2;
 
-	if (list == NULL || list->next == NULL || list->next->next)
+	if (list == NULL || list->next == NULL || list->next->next == NULL)
 		return (0);
 	node1 = list->next;
 	node2 = list->next->next;
