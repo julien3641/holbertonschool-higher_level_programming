@@ -2,7 +2,6 @@
 def print_matrix_integer(matrix=[[]]):
     if matrix == [[]]:
         print("")
-        return
     for a in range(len(matrix)):
         for b in range(len(matrix[a])):
             if b != len(matrix[a]) - 1:
