@@ -36,7 +36,8 @@ class Square:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
 
     """add position to the object"""
     @property
@@ -65,11 +66,11 @@ class Square:
         if self.__size == 0:
             print("")
         else:
-            for line in range(self.__position[1]):
+            for line in range(self.position[1]):
                 print("")
-            for i in range(self.__size):
-                for space in range(self.__position[0]):
+            for i in range(self.size):
+                for space in range(self.position[0]):
                     print(" ", end="")
-                for j in range(self.__size):
+                for j in range(self.size):
                     print("#", end="")
                 print("")
