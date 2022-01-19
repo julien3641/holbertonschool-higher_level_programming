@@ -53,10 +53,13 @@ class Square:
     def area(self):
         return self.__size ** 2
 
-    """print a square of ## and """
+    """print a square of # and spaces """
     def my_print(self):
         if self.__size == 0:
-            print()
+            print("")
+            return
+        for line in range(self.__position[1]):
+            print("")
         else:
             for i in range(self.__size):
                 for space in range(self.__position[0]):
