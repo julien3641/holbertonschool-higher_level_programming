@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 
+
 """
+
 This function is about to create a class named Square
 Where there will be a private instance attribute size
 and finally the area of this square
+
 """
 
 
@@ -19,9 +22,11 @@ class Square:
 
     def __init__(self, size=0):
         self.__size = size
+
     @property
     def size(self):
         return self.__size
+
     @size.setter
     def size(self, value):
         if type(value) is not int:
