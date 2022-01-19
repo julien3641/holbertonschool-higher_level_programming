@@ -8,7 +8,10 @@ Where there will be a private instance attribute size
 
 
 class Square:
-    """create a private instance attribute size"""
-    @property
-    def size(self):
-        return self._size
+    """
+    create a private instance attribute size
+    The __init__ is called when an object is created from the class
+    and it allow the class to initialize the attributes of a class.
+    """
+    def __init__(self, size):
+        self.__size = size
