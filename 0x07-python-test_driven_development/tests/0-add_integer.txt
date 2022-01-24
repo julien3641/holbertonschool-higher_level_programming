@@ -1,0 +1,57 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(6, 6)
+12
+
+>>> add_integer(-2, 2)
+0
+
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(5.5, 5.5)
+10
+
+>>> add_integer(-6, 12)
+6
+
+>>> add_integer("12.34.56", 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("NaNanananaBATMAN")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("", "")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None, 9)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("---", 9)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+>>> add_integer(0, 'a')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(6, "infinityandBEYOND")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(5.5, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'

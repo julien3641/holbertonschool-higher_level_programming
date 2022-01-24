@@ -1,0 +1,15 @@
+The module for text_indentation
+===============================
+
+Using test
+----------
+
+This is a text file in reStructuredText format :
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+>>> text_indentation("bank")
+bank
+>>> text_indentation(22)

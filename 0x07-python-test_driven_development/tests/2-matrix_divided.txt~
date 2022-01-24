@@ -1,0 +1,13 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix_divided(new_matrix, 6)
+12
+>>> matrix_divided(new_matrix, 2)
+0
+>>> matrix_divided(new_matrix, 555555)
+1111110
+>>> matrix_divided(new_matrix, -2)
+98
+>>> matrix_divided(new_matrix, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
