@@ -32,7 +32,7 @@ class Rectangle:
     def __str__(self):
         """print a rectangle in #"""
         new_str = ""
-        if self.__width == 0 and self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return new_str
         for i in range(self.__height):
             for j in range(self.__width):
