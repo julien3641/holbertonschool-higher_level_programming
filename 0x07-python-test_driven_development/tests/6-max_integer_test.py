@@ -4,8 +4,8 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
-class TestMaxInteger(unittest.TestCase):
 
+class TestMaxInteger(unittest.TestCase):
 
     def test_normal_list(self):
         list_test = [1, 2, 3, 10]
@@ -29,6 +29,7 @@ class TestMaxInteger(unittest.TestCase):
             max_integer(["joe", 4, "5", -6, 9])
         with self.assertRaises(TypeError):
             max_integer(2, 9)
+
     def test_negatif_number(self):
         list_test = [5, 4, 3, -2, 1]
         list_test2 = [-5, -4, -3, 2, -1]
