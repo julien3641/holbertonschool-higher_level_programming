@@ -42,8 +42,10 @@ class Rectangle:
         return new_str
 
     def __repr__(self):
-        """Python __repr__() function change the returns the object representation in string format"""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        """Python __repr__() function change the returns
+        the object representation in string format"""
+        return "Rectangle({}, {})".format(
+            eval(str(self.__width)), eval(str(self.__height)))
 
     @property
     def width(self):
