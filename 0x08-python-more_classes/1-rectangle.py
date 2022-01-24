@@ -39,7 +39,6 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
-
     @property
     def height(self):
         """property method return the height of the rectangle"""
