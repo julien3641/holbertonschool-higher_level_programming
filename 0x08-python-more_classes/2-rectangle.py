@@ -3,6 +3,8 @@
 """
 This function is about to create a class named Rectangle
 Where there will be a private instance attribute width
+Return the area of the rectangle
+and the perimeter of the rectangle
 """
 
 
