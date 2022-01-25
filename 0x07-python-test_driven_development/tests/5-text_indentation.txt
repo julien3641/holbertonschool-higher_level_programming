@@ -12,8 +12,54 @@ Now use it:
 
 >>> text_indentation("bank")
 bank
+
 >>> text_indentation(22)
 Traceback (most recent call last):
 TypeError: text must be a string
 
 >>> text_indentation("je suis . à la plage?")
+je suis .
+<BLANKLINE>
+à la plage?
+<BLANKLINE>
+
+>>> text_indentation("je suis .. à la plage?\n")
+je ne suis
+plus à la plage?
+<BLANKLINE>
+
+>>> text_indentation("je ne suis\n plus à la plage?")
+
+
+>>> text_indentation("Arrête de rêver : !!!!\n\n.?")
+Arrête de rêver :
+<BLANKLINE>
+!!!!
+<BLANKLINE>
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("")
+
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(7)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation({"one": 1, "two": 2})
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
