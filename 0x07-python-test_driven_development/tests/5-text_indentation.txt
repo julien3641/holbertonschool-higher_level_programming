@@ -24,12 +24,13 @@ je suis .
 <BLANKLINE>
 
 >>> text_indentation("je suis .. à la plage?\n")
-je ne suis
-plus à la plage?
+je suis .
 <BLANKLINE>
-
->>> text_indentation("je ne suis\n plus à la plage?")
-
+.
+<BLANKLINE>
+à la plage?
+<BLANKLINE>
+<BLANKLINE>
 
 >>> text_indentation("Arrête de rêver : !!!!\n\n.?")
 Arrête de rêver :
@@ -40,6 +41,7 @@ Arrête de rêver :
 <BLANKLINE>
 ?
 <BLANKLINE>
+
 
 >>> text_indentation()
 Traceback (most recent call last):
