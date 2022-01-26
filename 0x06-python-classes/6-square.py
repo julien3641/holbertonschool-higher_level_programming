@@ -22,6 +22,20 @@ class Square:
     """
 
     def __init__(self, size=0, position=(0, 0)):
+
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        if type(position) != tuple:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(position[0]) is not int and type(position[1]) is not int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
         self.__size = size
         self.__position = position
 
@@ -36,8 +50,7 @@ class Square:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        self.__size = value
 
     """add position to the object"""
     @property
@@ -54,8 +67,8 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+
+        self.__position = value
 
     """ return the area of the square"""
     def area(self):
@@ -64,10 +77,13 @@ class Square:
     """print a square of # and spaces """
     def my_print(self):
         if self.__size == 0:
-            print()
-        else:
-            for line in range(self.position[1]):
-                print()
-            for i in range(self.size):
-                print(" " * self.position[0], end="")
-                print('#' * self.__size)
+            print("")
+        elif self.__position[1] > 0:
+            for pos_1 in range(self.__position[1]):
+                print("")
+        for row in range(self.__size):
+            for pos_0 in range(self.__position[0]):
+                print(" ", end="")
+            for column in range(self.__size):
+                    print("#", end="")
+            print("")
