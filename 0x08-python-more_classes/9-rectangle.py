@@ -55,7 +55,8 @@ class Rectangle:
     def __repr__(self):
         """Python __repr__() function change the returns
         the object representation in string format"""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({}, {})".format(
+            eval(str(self.__width)), eval(str(self.__height)))
 
     def __del__(self):
         """Print the message when the instance of Rectangle is deleted"""

@@ -3,7 +3,7 @@
 """
 This function is about to create a class named Square
 Where there will be a private instance attribute size
-
+And finally the area of this square
 """
 
 
