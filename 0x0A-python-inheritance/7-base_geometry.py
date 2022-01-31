@@ -15,8 +15,11 @@ You are not allowed to import any module
 
 class BaseGeometry:
 
-    def integer_validator(name, value):
+    def area(self):
+        """def area that raise an exception message"""
+        raise Exception('area() is not implemented')
 
+    def integer_validator(name, value):
         """
         The method validator integer validate
         if the value is an int
@@ -26,8 +29,3 @@ class BaseGeometry:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
-
-    """def area that raise an exception message"""
-
-    def area(self):
-        raise Exception('area() is not implemented')
