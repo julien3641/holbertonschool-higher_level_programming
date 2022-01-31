@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-"""Write a class MyList that inherits from list"""
+"""Write a class MyList that inherits from list
+Public instance method print_sorted(), that print the list
+"""
 
 
 class MyList(list):
