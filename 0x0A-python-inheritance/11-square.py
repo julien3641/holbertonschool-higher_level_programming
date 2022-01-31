@@ -2,7 +2,7 @@
 
 Rectangle = __import__('9-rectangle').Rectangle
 
-""" Write a class Square that inherits from Rectangle 
+""" Write a class Square that inherits from Rectangle
 (9-rectangle.py). (task based on 10-square.py).
 Instantiation with size: def __init__(self, size)::
 size must be private. No getter or setter
@@ -31,4 +31,3 @@ class Square(Rectangle):
 
     def __str__(self):
         return "[Rectangle] {}/{}".format(self.__size, self.__size)
-
