@@ -6,6 +6,7 @@ Within importing the module de la task 7
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
 
     """ write a class Rectangle that inherits from BaseGeometry"""
