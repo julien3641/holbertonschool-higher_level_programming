@@ -52,4 +52,4 @@ class Square(Rectangle):
     """ function that compute the area of the square"""
 
     def area(self):
-        return self.__size * self.__size
+        return self.__size ** 2
