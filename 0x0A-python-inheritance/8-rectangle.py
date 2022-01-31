@@ -28,7 +28,7 @@ class Rectangle(BaseGeometry):
 
         :type height: object
         """
-        self.integer_validator("width", width)
+        self.integer_validator("Width", width)
         self.__width = width
         self.integer_validator("height", height)
         self.__height = height
