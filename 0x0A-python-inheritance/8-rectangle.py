@@ -2,8 +2,9 @@
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-    """ write a class Rectangle that inherits from BaseGeometry
-     Within importing the module de la task 7"""
+""" write a class Rectangle that inherits from BaseGeometry
+Within importing the module de la task 7"""
+
 
 class Rectangle(BaseGeometry):
 
