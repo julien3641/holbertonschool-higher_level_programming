@@ -24,7 +24,10 @@ class Rectangle(BaseGeometry):
     """ write a class Rectangle tha inherits from BaseGeometry"""
 
     def __init__(self, width, height):
+        """
 
+        :type height: object
+        """
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
