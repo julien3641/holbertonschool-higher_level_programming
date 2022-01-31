@@ -1,27 +1,13 @@
 #!/usr/bin/python3
 
-"""Write a class BaseGeometry with a public instance"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-
-class BaseGeometry:
-
-    """ def area that raise an exception message"""
-
-    def area(self):
-        raise Exception("area() is not implemented")
-
-    """ public instance method that validate the type of value"""
-
-    def integer_validator(self, name, value):
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-
+    """ write a class Rectangle that inherits from BaseGeometry
+     Within importing the module de la task 7"""
 
 class Rectangle(BaseGeometry):
 
-    """ write a class Rectangle tha inherits from BaseGeometry"""
+    """ write a class Rectangle that inherits from BaseGeometry"""
 
     def __init__(self, width, height):
         """
