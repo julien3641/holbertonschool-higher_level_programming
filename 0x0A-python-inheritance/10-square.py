@@ -4,7 +4,6 @@
 
 
 class BaseGeometry:
-
     """ def area that raise an exception message"""
 
     def area(self):
@@ -20,11 +19,9 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-
     """ write a class Rectangle that inherits from BaseGeometry"""
 
     def __init__(self, width, height):
-
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
@@ -45,9 +42,14 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
-
     """ defined a square of size "size by size" """
+
     def __init__(self, size):
         super().__init__(size, size)
         self.__size = size
         self.integer_validator("size", size)
+
+    """ function that compute the area of the square"""
+
+    def area(self):
+        return self.__size * self.__size
