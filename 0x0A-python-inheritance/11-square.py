@@ -20,5 +20,12 @@ class Square(Rectangle):
         super().__init__(size, size)
         self.__size = size
 
+    """str method to print the rectangle size"""
+
     def __str__(self):
         return "[Rectangle] {}/{}".format(self.__size, self.__size)
+
+    """area method to compute the area of the rectangle"""
+
+    def erea(self):
+        return self.__size ** 2
