@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 """Write a class BaseGeometry with a public instance
-Public instance method: def area(self):
 that raises an Exception with the message area() is not implemented
 Public instance method: def integer_validator(self, name, value):
 that validates value:
@@ -14,22 +13,21 @@ You are not allowed to import any module
 """
 
 
-def integer_validator(name, value):
-    """
-    The method validator integer validate
-    if the value is an int
-    """
-    if type(value) is not int:
-        raise TypeError('{} must be an integer'.format(name))
-    if value <= 0:
-        raise ValueError("{} must be greater than 0".format(name))
-
-
 class BaseGeometry:
 
-    """ def area that raise an exception message"""
+    def integer_validator(name, value):
+
+        """
+        The method validator integer validate
+        if the value is an int
+        public instance method that validate the type of value
+        """
+        if type(value) is not int:
+            raise TypeError('{} must be an integer'.format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
+
+    """def area that raise an exception message"""
 
     def area(self):
         raise Exception('area() is not implemented')
-
-    """ public instance method that validate the type of value"""
