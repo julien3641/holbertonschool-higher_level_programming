@@ -10,6 +10,7 @@ You are not allowed to import any module
 
 def add_attribute(obj, name, value):
     """add a new attribute to an object """
-    if isinstance(obj, (int, float, str, tuple, bool, dict, frozenset)):
+    if hasattr(obj, "__dict__") is False:
         raise TypeError("can't add new attribute")
-    setattr(obj, name, value)
+    else:
+        setattr(obj, name, value)
