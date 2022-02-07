@@ -645,10 +645,10 @@ class TestArea(unittest.TestCase):
             r.area()
 
     def test_area_dict(self):
-
+        """check if width is a dict"""
         with self.assertRaises(TypeError):
             r = Rectangle({1, 2, 3}, {1, 2, 3})
-            r.area()
+            r.area(r)
 
     def test_area_float(self):
 
@@ -670,7 +670,7 @@ class TestArea(unittest.TestCase):
             r.area()
 
 
-class Testdisplay(unittest.TestCase):
+class TestDisplay(unittest.TestCase):
 
     def test_display(self):
         """
@@ -705,50 +705,58 @@ class Testdisplay(unittest.TestCase):
             r.display()
 
     def test_display_str(self):
+        """check if display is string"""
         with self.assertRaises(TypeError):
             r = Rectangle("Alfred", "Robin", "Batman", "Batgirl")
             r.display()
 
     def test_display_tuple(self):
+        """check if display is a tuple"""
         with self.assertRaises(TypeError):
             r = Rectangle((1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3))
             r.display()
 
     def test_display_list(self):
+        """check if display is a list"""
         with self.assertRaises(TypeError):
             r = Rectangle([1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3])
             r.display()
 
     def test_display_dict(self):
+        """check if display is a dict"""
         with self.assertRaises(TypeError):
             r = Rectangle({1, 2, 3}, {1, 2, 3},
                           {1, 2, 3}, {1, 2, 3})
             r.display()
 
     def test_display_float_inf(self):
+        """check if display is float inf"""
         with self.assertRaises(TypeError):
             r = Rectangle(float("inf"), float("inf"),
                           float("inf"), float("inf"))
             r.display()
 
     def test_display_float_NaN(self):
+        """check if display is float NaN"""
         with self.assertRaises(TypeError):
             r = Rectangle(float("NaN"), float("NaN"),
                           float("NaN"), float("NaN"))
             r.display()
 
     def test_display_empty(self):
+        """check if display is empty"""
         with self.assertRaises(TypeError):
             r = Rectangle()
             r.display()
 
     def test_display_None(self):
+        """check if display is None"""
         with self.assertRaises(TypeError):
             r = Rectangle(None, None, None, None)
             r.display()
 
 
-class Testwidth(unittest.TestCase):
+class TestWidth(unittest.TestCase):
 
     def test_width(self):
         """
@@ -767,64 +775,83 @@ class Testwidth(unittest.TestCase):
         self.assertEqual(r.width, 5)
 
     def test_width_neg(self):
+        """check if width is neg"""
         with self.assertRaises(ValueError):
-            r = Rectangle(-5, -5, -5, -5)
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = -5
+
+    def test_width_neg_instantiation(self):
+        """check if width is neg"""
+        with self.assertRaises(ValueError):
+            Rectangle(-5, 5, 2, 3)
 
     def test_width_zero(self):
+        """check if width is zero"""
         with self.assertRaises(ValueError):
-            r = Rectangle(0, -5, -5, -5)
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = 0
+
+    def test_width_zero_instantiation(self):
+        """check if width is zero"""
+        with self.assertRaises(ValueError):
+            Rectangle(5, 0, 2, 3)
 
     def test_width_bool(self):
+        """check if width is a bool"""
         with self.assertRaises(TypeError):
-            r = Rectangle(True, False, False, True)
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = True
 
     def test_width_str(self):
+        """check if width is a string"""
         with self.assertRaises(TypeError):
-            r = Rectangle("Alfred", "Robin", "Batman", "Batgirl")
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = "batman"
 
     def test_width_tuple(self):
+        """check if width is a tuple"""
         with self.assertRaises(TypeError):
-            r = Rectangle((1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3))
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = (1, 2, 3)
 
     def test_width_list(self):
+        """check if width is a list"""
         with self.assertRaises(TypeError):
-            r = Rectangle([1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3])
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = [1, 2, 3]
 
     def test_width_dict(self):
+        """check if width is a dict"""
         with self.assertRaises(TypeError):
-            r = Rectangle({1, 2, 3}, {1, 2, 3}, {1, 2, 3}, {1, 2, 3})
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = {1, 2, 3}
 
     def test_width_float_inf(self):
+        """check if width is float inf"""
         with self.assertRaises(TypeError):
-            r = Rectangle(float("inf"), float("inf"),
-                          float("inf"), float("inf"))
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = float("inf")
 
     def test_width_float_NaN(self):
+        """ check if width is float NaN"""
         with self.assertRaises(TypeError):
-            r = Rectangle(float("NaN"), float("NaN"),
-                          float("NaN"), float("NaN"))
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = float("NaN")
 
     def test_width_empty(self):
+        """chef if width is empty"""
         with self.assertRaises(TypeError):
             r = Rectangle()
             r.width()
 
     def test_width_None(self):
+        """check if width is None"""
         with self.assertRaises(TypeError):
-            r = Rectangle(None, None, None, None)
-            r.width()
+            r = Rectangle(5, 5, 2, 3)
+            r.width = None
 
 
-class Testheight(unittest.TestCase):
+class TestHeight(unittest.TestCase):
 
     def test_height(self):
         """
@@ -843,62 +870,80 @@ class Testheight(unittest.TestCase):
         self.assertEqual(r.height, 5)
 
     def test_height_neg(self):
-
+        """test if height is negative"""
         with self.assertRaises(ValueError):
-            r = Rectangle(-5, -5, -5, -5)
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = -5
+
+    def test_height_neg_instantiation(self):
+        """test if height is negative"""
+        with self.assertRaises(ValueError):
+            Rectangle(5, -5, 2, 3)
 
     def test_height_zero(self):
+        """test if height is zero"""
         with self.assertRaises(ValueError):
-            r = Rectangle(-5, 0, -5, -5)
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = 0
+
+    def test_height_zero_instantiation(self):
+        """test if height is zero"""
+        with self.assertRaises(ValueError):
+            Rectangle(5, 0, 2, 3)
 
     def test_height_bool(self):
+        """test if height is bool"""
         with self.assertRaises(TypeError):
-            r = Rectangle(True, False, False, True)
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = True
 
     def test_height_str(self):
+        """test if height is a string"""
         with self.assertRaises(TypeError):
-            r = Rectangle("Alfred", "Robin", "Batman", "Batgirl")
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = "batman"
 
     def test_height_tuple(self):
+        """test if height is a tuple"""
         with self.assertRaises(TypeError):
-            r = Rectangle((1, 2, 3), (1, 2, 3), (1, 2, 3), (1, 2, 3))
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = (1, 2, 3)
 
     def test_height_list(self):
+        """test if height is a list"""
         with self.assertRaises(TypeError):
-            r = Rectangle([1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3])
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = [1, 2, 3]
 
     def test_height_dict(self):
+        """test if height is a dict"""
         with self.assertRaises(TypeError):
-            r = Rectangle({1, 2, 3}, {1, 2, 3}, {1, 2, 3}, {1, 2, 3})
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = {1, 2, 3}
 
     def test_height_float_inf(self):
+        """test if height is a float inf"""
         with self.assertRaises(TypeError):
-            r = Rectangle(float("inf"), float("inf"),
-                          float("inf"), float("inf"))
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = float("inf")
 
     def test_height_flaot_NaN(self):
+        """test if height is a float NaN"""
         with self.assertRaises(TypeError):
-            r = Rectangle(float("NaN"), float("NaN"),
-                          float("NaN"), float("NaN"))
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = float("NaN")
 
     def test_height_empty(self):
+        """test if height is empty"""
         with self.assertRaises(TypeError):
             r = Rectangle()
             r.height()
 
     def test_height_None(self):
+        """test if height is None"""
         with self.assertRaises(TypeError):
-            r = Rectangle(None, None, None, None)
-            r.height()
+            r = Rectangle(5, 5, 2, 3)
+            r.height = None
 
 
 if __name__ == "__main__":
