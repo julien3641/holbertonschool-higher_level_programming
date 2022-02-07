@@ -7,7 +7,8 @@ import os.path
 
 
 class Base:
-    """ This class is the base class"""
+    """ This class is the base class
+    This class represent the base of rectangle and square"""
 
     __nb_objects = 0
 
