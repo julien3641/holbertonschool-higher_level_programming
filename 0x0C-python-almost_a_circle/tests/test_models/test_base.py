@@ -177,6 +177,22 @@ class TestBaseSaveToFile(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle.save_to_file([], [])
 
+    def test_save_to_file_empty_list_rectangle(self):
+        """Test with an empty list for rectangle"""
+        Rectangle.save_to_file([])
+        list_objs = '[]'
+        with open('Rectangle.json', 'r', encoding='utf-8') as f:
+            self.assertEqual(f.read(), list_objs)
+        os.remove('Rectangle.json')
+
+    def test_save_to_file_empty_list_square(self):
+        """Test with an empty list for square"""
+        Square.save_to_file([])
+        list_objs = '[]'
+        with open('Square.json', 'r', encoding='utf-8') as f:
+            self.assertEqual(f.read(), list_objs)
+        os.remove('Square.json')
+
 
 class TestBaseFromJsonString(unittest.TestCase):
     """

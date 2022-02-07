@@ -751,6 +751,16 @@ class TestDisplay(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle.display()
 
+    def test_display_empty_x(self):
+        """check if display is empty x"""
+        with self.assertRaises(TypeError):
+            Rectangle.display()
+
+    def test_display_empty_y(self):
+        """check if display is empty"""
+        with self.assertRaises(TypeError):
+            Rectangle.display()
+
     def test_display_None(self):
         """check if display is None"""
         with self.assertRaises(TypeError):
