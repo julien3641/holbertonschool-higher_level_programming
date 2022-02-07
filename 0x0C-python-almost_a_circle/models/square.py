@@ -42,4 +42,5 @@ class Square(Rectangle):
                     setattr(self, my_list[arg], args[arg])
 
     def to_dictionary(self):
+        """change the data to dictionary"""
         return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}

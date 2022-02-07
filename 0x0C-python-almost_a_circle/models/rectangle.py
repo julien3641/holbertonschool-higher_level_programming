@@ -95,6 +95,7 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """create the method area"""
         return self.__width * self.__height
 
     def display(self):
@@ -123,5 +124,6 @@ class Rectangle(Base):
                     setattr(self, my_list[arg], args[arg])
 
     def to_dictionary(self):
+        """change the data to dictionary"""
         return {'x': self.__x, 'y': self.__y, 'id': self.id,
                 'height': self.__height, 'width': self.__width}
