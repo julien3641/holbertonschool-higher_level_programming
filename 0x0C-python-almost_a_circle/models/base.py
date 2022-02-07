@@ -74,8 +74,3 @@ class Base:
                     dummy = cls.create(**list[i])
                     newlist.append(dummy)
                 return newlist
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        """ this function open a window and draws all the rectangle
-        and squares in the main function"""
