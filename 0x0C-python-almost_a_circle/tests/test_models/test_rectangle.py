@@ -648,7 +648,7 @@ class TestArea(unittest.TestCase):
         """check if width is a dict"""
         with self.assertRaises(TypeError):
             r = Rectangle({1, 2, 3}, {1, 2, 3})
-            r.area(r)
+            r.area()
 
     def test_area_float(self):
 
@@ -690,16 +690,19 @@ class TestDisplay(unittest.TestCase):
         self.assertEqual(r.display(), None)
 
     def test_display_neg(self):
+        """check if display is negative"""
         with self.assertRaises(ValueError):
             r = Rectangle(-5, -5, -5, -5)
             r.display()
 
     def test_display_zero(self):
+        """check if display is zero"""
         with self.assertRaises(ValueError):
             r = Rectangle(0, 0, 0, 0)
             r.display()
 
     def test_display_bool(self):
+        """check if display is bool"""
         with self.assertRaises(TypeError):
             r = Rectangle(True, False, False, True)
             r.display()
@@ -746,14 +749,14 @@ class TestDisplay(unittest.TestCase):
     def test_display_empty(self):
         """check if display is empty"""
         with self.assertRaises(TypeError):
-            r = Rectangle()
-            r.display()
+            Rectangle.display()
 
     def test_display_None(self):
         """check if display is None"""
         with self.assertRaises(TypeError):
             r = Rectangle(None, None, None, None)
             r.display()
+
 
 
 class TestWidth(unittest.TestCase):
@@ -777,13 +780,13 @@ class TestWidth(unittest.TestCase):
     def test_width_neg(self):
         """check if width is neg"""
         with self.assertRaises(ValueError):
-            r = Rectangle(5, 5, 2, 3)
+            r = Rectangle(5, 5, 2, 3, 5)
             r.width = -5
 
     def test_width_neg_instantiation(self):
         """check if width is neg"""
         with self.assertRaises(ValueError):
-            Rectangle(-5, 5, 2, 3)
+            Rectangle(-5, 5, 2, 3, 5)
 
     def test_width_zero(self):
         """check if width is zero"""
@@ -832,6 +835,12 @@ class TestWidth(unittest.TestCase):
             r = Rectangle(5, 5, 2, 3)
             r.width = float("inf")
 
+    def test_width_float(self):
+        """Test with float width."""
+        r = Rectangle(1, 1, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            r.width = 1.1
+
     def test_width_float_NaN(self):
         """ check if width is float NaN"""
         with self.assertRaises(TypeError):
@@ -872,29 +881,29 @@ class TestHeight(unittest.TestCase):
     def test_height_neg(self):
         """test if height is negative"""
         with self.assertRaises(ValueError):
-            r = Rectangle(5, 5, 2, 3)
+            r = Rectangle(5, 5, 2, 3, 5)
             r.height = -5
 
     def test_height_neg_instantiation(self):
         """test if height is negative"""
         with self.assertRaises(ValueError):
-            Rectangle(5, -5, 2, 3)
+            Rectangle(5, -5, 2, 3, 5)
 
     def test_height_zero(self):
         """test if height is zero"""
         with self.assertRaises(ValueError):
-            r = Rectangle(5, 5, 2, 3)
+            r = Rectangle(5, 5, 2, 3, 5)
             r.height = 0
 
     def test_height_zero_instantiation(self):
         """test if height is zero"""
         with self.assertRaises(ValueError):
-            Rectangle(5, 0, 2, 3)
+            Rectangle(5, 0, 2, 3, 5)
 
     def test_height_bool(self):
         """test if height is bool"""
         with self.assertRaises(TypeError):
-            r = Rectangle(5, 5, 2, 3)
+            r = Rectangle(5, 5, 2, 3, 5)
             r.height = True
 
     def test_height_str(self):
@@ -926,6 +935,12 @@ class TestHeight(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(5, 5, 2, 3)
             r.height = float("inf")
+
+    def test_height_dict_empty(self):
+        """Test with dict hight."""
+        r = Rectangle(1, 1, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            r.height = {}
 
     def test_height_flaot_NaN(self):
         """test if height is a float NaN"""
