@@ -751,22 +751,38 @@ class TestDisplay(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle.display()
 
-    def test_display_empty_x(self):
-        """check if display is empty x"""
-        with self.assertRaises(TypeError):
-            Rectangle.display()
-
-    def test_display_empty_y(self):
-        """check if display is empty"""
-        with self.assertRaises(TypeError):
-            Rectangle.display()
-
     def test_display_None(self):
         """check if display is None"""
         with self.assertRaises(TypeError):
             r = Rectangle(None, None, None, None)
             r.display()
 
+    def test_display_no_args(self):
+        """Test the display method without arguments."""
+        r1 = Rectangle(1, 1)
+        co = io.StringIO()
+        sys.stdout = co
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(co.getvalue(), "#\n")
+
+    def test_display_no_x(self):
+        """Test the display method without x."""
+        r1 = Rectangle(1, 1, 0, 1)
+        CO = io.StringIO()
+        sys.stdout = CO
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(CO.getvalue(), "\n#\n")
+
+    def test_display_no_y(self):
+        """Test the display method without y."""
+        r1 = Rectangle(1, 1, 1)
+        CO = io.StringIO()
+        sys.stdout = CO
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(CO.getvalue(), " #\n")
 
 
 class TestWidth(unittest.TestCase):
@@ -812,7 +828,7 @@ class TestWidth(unittest.TestCase):
     def test_width_bool(self):
         """check if width is a bool"""
         with self.assertRaises(TypeError):
-            r = Rectangle(5, 5, 2, 3)
+            r = Rectangle(5, 5, 2, 3, 6)
             r.width = True
 
     def test_width_str(self):
@@ -860,14 +876,13 @@ class TestWidth(unittest.TestCase):
     def test_width_empty(self):
         """chef if width is empty"""
         with self.assertRaises(TypeError):
-            r = Rectangle()
-            r.width()
+            Rectangle()
 
     def test_width_None(self):
         """check if width is None"""
         with self.assertRaises(TypeError):
-            r = Rectangle(5, 5, 2, 3)
-            r.width = None
+            Rectangle(None, None, None, None)
+
 
 
 class TestHeight(unittest.TestCase):
@@ -914,7 +929,7 @@ class TestHeight(unittest.TestCase):
         """test if height is bool"""
         with self.assertRaises(TypeError):
             r = Rectangle(5, 5, 2, 3, 5)
-            r.height = True
+            r.height = False
 
     def test_height_str(self):
         """test if height is a string"""
@@ -961,14 +976,12 @@ class TestHeight(unittest.TestCase):
     def test_height_empty(self):
         """test if height is empty"""
         with self.assertRaises(TypeError):
-            r = Rectangle()
-            r.height()
+            Rectangle()
 
     def test_height_None(self):
         """test if height is None"""
         with self.assertRaises(TypeError):
-            r = Rectangle(5, 5, 2, 3)
-            r.height = None
+            Rectangle(None, None, None, None)
 
 
 if __name__ == "__main__":
