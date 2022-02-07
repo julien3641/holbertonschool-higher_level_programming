@@ -4,7 +4,7 @@ The module define the class Base.
 """
 import json
 import os.path
-
+import turtle
 
 class Base:
     """ This class is the base class
@@ -81,3 +81,50 @@ class Base:
     def draw(list_rectangles, list_squares):
         """ this function open a window and draws all the rectangle
         and squares in the main function"""
+        turtle.color("purple")
+        turtle.shape("arrow")
+        turtle.shapesize(2)
+        turtle.pencolor("purple")
+        turtle.speed(4)
+        turtle.pensize(10)
+        for rectangles in list_rectangles:
+            turtle.penup()
+            turtle.goto(rectangles.x, rectangles.y)
+            turtle.pendown()
+            for i in range(2):
+                turtle.forward(rectangles.width)
+                turtle.right(90)
+                turtle.forward(rectangles.height)
+                turtle.right(90)
+
+        turtle.shape("turtle")
+        turtle.shapesize(2)
+        turtle.color("yellow")
+        turtle.pencolor("yellow")
+        turtle.speed(4)
+        turtle.pensize(5)
+        for squares in list_squares:
+            turtle.penup()
+            turtle.goto(squares.x, squares.y)
+            turtle.pendown()
+            for i in range(2):
+                turtle.forward(squares.size)
+                turtle.left(90)
+                turtle.forward(squares.size)
+                turtle.left(90)
+
+        for squares in list_squares:
+            turtle.penup()
+            turtle.goto(squares.x, squares.y)
+            turtle.pendown()
+            for i in range(2):
+                turtle.forward(rectangles.width)
+                turtle.right(90)
+                turtle.forward(rectangles.height)
+                turtle.right(90)
+        turtle.penup()
+        turtle.setpos(-50, 200)
+        turtle.color("blue")
+        turtle.write("Done ! (Click to leave)", font=("Arial", 16, "normal"))
+        turtle.hideturtle()
+        turtle.exitonclick()
