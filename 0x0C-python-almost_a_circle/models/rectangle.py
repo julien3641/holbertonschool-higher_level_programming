@@ -101,18 +101,14 @@ class Rectangle(Base):
     def display(self):
         """update the Rectangle class by adding a public method
         Print a stdout of the rectangle with #"""
-        rec = ""
-        if self.__y > 0:
-            for k in range(self.__y):
-                rec += '\n'
+        for k in range(self.__y):
+                print()
         for column in range(self.__height):
             for i in range(self.__x):
-                rec += ' '
+                print(" ", end="")
             for j in range(self.__width):
-                rec += '#'
-            if column < self.__height:
-                rec += '\n'
-        print("{}".format(rec))
+                print("#", end="")
+            print()
 
     def update(self, *args, **kwargs):
         """add a public method update to assign an argument
