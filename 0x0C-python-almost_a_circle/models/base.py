@@ -6,6 +6,7 @@ import json
 import os.path
 import turtle
 
+
 class Base:
     """ This class is the base class
     This class represent the base of rectangle and square"""
