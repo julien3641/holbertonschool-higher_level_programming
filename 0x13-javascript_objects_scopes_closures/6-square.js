@@ -12,8 +12,8 @@ class Square extends Rectangle {
     if (c === undefined) {
       super.print();
     } else {
-      for (let i = 0; i < this.height; i++) {
-        console.log('C'.repeat(this.width));
+      for (let i = 0; i < this.width; i++) {
+        console.log('C'.repeat(this.height));
       }
     }
   }
